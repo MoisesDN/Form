@@ -1,0 +1,15 @@
+services:
+  forms-db:
+    container_name: forms-db
+    image: postgres:17
+    healthcheck:
+      test: pg_isready -U postgres -d forms
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    ports:
+      - '5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qzwxecrv
+      POSTGRES_DB: forms

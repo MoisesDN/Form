@@ -9,6 +9,17 @@ If you want to learn more about Quarkus, please visit its website: <https://quar
 You can run your application in dev mode that enables live coding using:
 
 ```shell script
+
+> **_NOTE:_**  You need start a docker container first or create a docker-compose.yml to start.
+
+docker run -d \
+  --name my-postgres-db \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=qzwxecrv \
+  -e POSTGRES_DB=dbform \
+  -p 5432:5432 \
+  postgres
+
 ./mvnw quarkus:dev
 ```
 
